@@ -1,0 +1,25 @@
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Mission_name</th>
+        <th scope="col">Launch_date_local</th>
+        <th scope="col">Launch_site</th>
+        <th scope="col">Links</th>
+        <th scope="col">Rocket</th>
+        <th scope="col">Ships</th>
+      </tr>
+    </thead>
+
+    
+    <tbody>
+      <tr *ngFor= "let Launch of launches " >
+        <td> {{Launch.mission_name}}</td>
+        <td>{{Launch.launch_date_local}}</td>
+        <td>{{getLaunchSite(Launch.launch_site)}}</td>
+        <td [innerHTML]="getLink(Launch.links)"></td>
+        <td [innerHTML]="getRocket(Launch.rocket)"></td>
+        <td [innerHTML]="getShips(Launch.ships)"></td>
+      </tr>
+      
+    </tbody>
+  </table>
